@@ -1,0 +1,28 @@
+﻿<Window x:Class="Eventos_Delegates_Lambda.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Eventos_Delegates_Lambda"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Canvas Name="container">
+        <!--O listBox será criado de forma programática no c# na classe EDLListBox-->
+
+        <StackPanel Canvas.Top="15" Canvas.Left="290">
+            <TextBlock FontWeight="Bold">ID:</TextBlock>
+            <TextBlock Name="txtId"></TextBlock>
+            <TextBlock FontWeight="Bold">Nome:</TextBlock>
+            <TextBlock Name="txtNome"></TextBlock>
+            <TextBlock FontWeight="Bold">Telefone:</TextBlock>
+            <TextBlock Name="txtTelefone"></TextBlock>
+            <TextBlock FontWeight="Bold">Endereço:</TextBlock>
+            <TextBlock Name="txtEndereco"></TextBlock>
+            <TextBlock FontWeight="Bold">Observações:</TextBlock>
+            <TextBlock Name="txtObs"></TextBlock>
+        </StackPanel>
+        <Button Content="Excluir" Canvas.Left="434" Canvas.Top="247" HorizontalAlignment="Left" VerticalAlignment="Center" Width="68" Click="Button_Click" Name="btnExcluir"/>
+        <Button Content="Editar" Canvas.Left="290" Canvas.Top="247" HorizontalAlignment="Left" VerticalAlignment="Center" Width="68" Name="btnEditar"/>
+
+    </Canvas>
+</Window>
