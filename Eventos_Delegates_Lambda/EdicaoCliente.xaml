@@ -19,8 +19,8 @@
             <TextBlock FontWeight="Bold">Observações:</TextBlock>
             <TextBox Name="txtObs"></TextBox>
             <StackPanel Margin="0,5" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Content="OK" Margin="15,0" Padding="5"></Button>
-                <Button Content="Cancelar" Padding="5"></Button>
+                <Button Content="OK" Margin="15,0" Padding="5" Name="btnOk"></Button>
+                <Button Content="Cancelar" Padding="5" Name="btnCancelar"></Button>
             </StackPanel>
             
         </StackPanel>

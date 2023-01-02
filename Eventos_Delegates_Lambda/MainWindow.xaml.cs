@@ -24,7 +24,7 @@ namespace Eventos_Delegates_Lambda
     {
         //abrindo conexão com banco 
         private readonly EDLModelContainer _eDLModel = new EDLModelContainer(); //por convenção, campos privados devem iniciar com o "_" . 
-        private readonly ListBox eDLListBox; //crinado o campo da listBox para adcionar os items
+        private readonly ListBox eDLListBox; //crinado o campo da listBox para adcionar os clientes
 
         public MainWindow()
         {
@@ -103,8 +103,21 @@ namespace Eventos_Delegates_Lambda
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
-            EdicaoCliente edicaoCliente = new EdicaoCliente();
-            edicaoCliente.ShowDialog(); //ShowDialog, diferente de show, não permite que a tela de trás seja maniplada sem que a a janela atual seja encerrada.
+            var clienteAtual =(Cliente)eDLListBox.SelectedItem;
+            EdicaoCliente edicaoCliente = new EdicaoCliente(clienteAtual);
+            var resultado =  edicaoCliente.ShowDialog().Value; //ShowDialog, diferente de show, não permite que a tela de trás seja maniplada sem que a a janela atual seja encerrada. Ele retorna um valor nulo 
+
+            //usuário clicou em OK
+            if (resultado) // valor de verdadeiro ou falso definidos no método de ok e cancelar
+            {
+                
+            }
+
+            //usuário clicou em cancelar
+            else
+            {
+
+            }
         }
 
         //Exemplo de evento (click) que se inicia por fonte externa (usuário), que irá executar um código para excluir um cliente. Dispensando a necessidad de se criar uma classe 
