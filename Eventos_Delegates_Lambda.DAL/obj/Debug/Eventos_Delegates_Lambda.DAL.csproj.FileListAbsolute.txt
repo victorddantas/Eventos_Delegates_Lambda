@@ -1,0 +1,28 @@
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.csproj.AssemblyReference.cache
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.Properties.Resources.resources
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.csproj.GenerateResource.cache
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.csproj.CoreCompileInputs.cache
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\bin\Debug\Eventos_Delegates_Lambda.DAL.dll.config
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\bin\Debug\Eventos_Delegates_Lambda.DAL.dll
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\bin\Debug\Eventos_Delegates_Lambda.DAL.pdb
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\bin\Debug\EntityFramework.dll
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\bin\Debug\EntityFramework.xml
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.csproj.CopyComplete
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.dll
+C:\ANFSUSAX\PROJETOS\Eventos_Delegates_Lambda\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.pdb
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\bin\Debug\Eventos_Delegates_Lambda.DAL.dll.config
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\bin\Debug\Eventos_Delegates_Lambda.DAL.dll
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\bin\Debug\Eventos_Delegates_Lambda.DAL.pdb
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\bin\Debug\EntityFramework.dll
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\bin\Debug\EntityFramework.xml
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.csproj.AssemblyReference.cache
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.Properties.Resources.resources
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.csproj.GenerateResource.cache
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.csproj.CoreCompileInputs.cache
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.csproj.CopyComplete
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.dll
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda.DAL\obj\Debug\Eventos_Delegates_Lambda.DAL.pdb
