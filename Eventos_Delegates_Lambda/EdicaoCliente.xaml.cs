@@ -43,13 +43,28 @@ namespace Eventos_Delegates_Lambda
         //adicionando eventos de atualizar e cancelar
         private void AtualizarDados()
         {
-            btnOk.Click += new RoutedEventHandler(btnOk_Click);
-            btnCancelar.Click += new RoutedEventHandler(btnCancelar_Click);
-            btnOk.Click += new RoutedEventHandler(Fechar);
-            btnCancelar.Click += new RoutedEventHandler(Fechar);
+            //criando o próprio evento manipulando o método
+            
+            
+           //utilizando os delegates podemos tratar métodos com objetos (manipuláveis), porém temos que fazer um casting explicitando que se trata de um evento (RoutedEventHandler)
+           //A prtir do momento que eu faço o casting e defino o método como do tipo delegate o compilador passa a conceder acesso a classe abstrata Delegate. 
+           //dispensando o uso do termo DELEGATE, podendo utlizar o var.
+
+
+
+            //manipulando com operador "+" (somando os métodos)
+            
+            var okEventHandler = (RoutedEventHandler)btnOk_Click + Fechar;
+
+
+            //manipulando com o combine. (utlizando com o operador de soma o compiladaor irá utilizar o método combine, então para reduzir o código opte por usar o operador de soma.
+            var cancelarEventHandler = (RoutedEventHandler)Delegate.Combine((RoutedEventHandler)btnOk_Click,(RoutedEventHandler)Fechar); // o delegate combine pode somar diferentes métodos 
+
+            btnOk.Click += okEventHandler;
+            btnCancelar.Click += cancelarEventHandler; //ao invés de passar os métodos diretemante (ok e cancelar), somasse os dois passando os mesmos como delagates 
         }
 
-        private void btnOk_Click(object sender, EventArgs e) => DialogResult = true; //definindo valor do click
+        private void btnOk_Click(object sender, EventArgs e) => DialogResult = true; //definindo valor do click 
             //Close();
         
         private void btnCancelar_Click(object sender, EventArgs e) => DialogResult = false;
