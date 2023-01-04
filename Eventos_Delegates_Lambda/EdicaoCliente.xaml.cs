@@ -87,26 +87,88 @@ namespace Eventos_Delegates_Lambda
 
             btnOk.Click += okEventHandler;
             btnCancelar.Click += cancelarEventHandler; //ao invés de passar os métodos diretemante (ok e cancelar), somasse os dois passando os mesmos como delagates 
+
+
+            //validação dos campos (podemos dispensara a instanciação do delegate, pois colocabdo só o nome proprosto, o comnpilador já entende método.
+            //Utilizando o método DelegateValidacaoCampo que cria os delgates dinãmicamente
+
+            txtNome.TextChanged += DelegateValidacaoCampo(txtNome);
+            txtTelefone.TextChanged += DelegateValidacaoCampo(txtTelefone);
+            txtEndereco.TextChanged += DelegateValidacaoCampo(txtEndereco);
+            txtObs.TextChanged += DelegateValidacaoCampo(txtObs);
+
+
         }
+
+    
 
 
         //Métodos que são utlizados no delegates.
-        
+
         //Estes métodos, só serão utlizados nos delegates, desta forma, para simplificar o código podemos utlizar métodos anônimos
         //Estes por sua vez não possuem nomes e possuem uma sintaxe mais simples 
 
         //private void btnOk_Click(object sender, EventArgs e) => DialogResult = true; //definindo valor do click 
         //    //Close();
-        
+
         //private void btnCancelar_Click(object sender, EventArgs e) => DialogResult = false;
         //    //Close();
-        
+
 
 
 
         //subistitui o Close()
-        
         private void Fechar(object sender, EventArgs e) => Close();
-      
+
+
+        //Método para alteração de cor na validação do campo 
+
+
+        //private void TxtNome_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    var textoVazio = string.IsNullOrEmpty(txtNome.Text);
+
+        //    if (textoVazio)
+        //    {
+        //        txtNome.Background = new SolidColorBrush(Colors.Red);
+        //    }
+        //    else
+        //    {
+        //        txtNome.Background = new SolidColorBrush(Colors.White);
+
+        //    }
+        //}
+
+
+
+        //Método para construir delegates dinâmicamente para evitar a repetição de código para validação do campo, pois teria que criar um método para cada campo igaul o acima
+
+
+        private TextChangedEventHandler DelegateValidacaoCampo (TextBox txt) //recebe como parâmetro um textbox 
+        {
+            return (o, e) =>
+            {
+                var textoVazio = string.IsNullOrEmpty(txt.Text);
+
+                //if (textoVazio)
+                //{
+                //    txt.Background = new SolidColorBrush(Colors.Red);
+                //}
+                //else
+                //{
+                //    txt.Background = new SolidColorBrush(Colors.White);
+
+                //}
+
+
+                //Podemos susbtituir pelo if ternário 
+
+                //se o retorno de textoVazio for true, prrencha o campo de vermelho, senão preencha de branco
+                txt.Background = textoVazio ? txt.Background = new SolidColorBrush(Colors.Red) : txt.Background = new SolidColorBrush(Colors.White); 
+
+                
+            };
+        }
+
     }
 }
