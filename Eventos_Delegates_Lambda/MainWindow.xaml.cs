@@ -57,6 +57,8 @@ namespace Eventos_Delegates_Lambda
 
             //Adicionando o evento ao listBox (mudança de seleção) (Um evento só pode aparecer a esquerda de um operador de += pois não se pode modificar o comportamento de um evento
             //somente adicionar e remover).
+
+            //delagate
             eDLListBox.SelectionChanged += new SelectionChangedEventHandler(lstCliente_SelectionChanged);
 
             container.Children.Add(eDLListBox); //Adicionando um novo membro filho ao canvas
