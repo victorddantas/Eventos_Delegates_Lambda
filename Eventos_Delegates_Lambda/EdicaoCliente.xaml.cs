@@ -48,15 +48,21 @@ namespace Eventos_Delegates_Lambda
             //pelos delegates contidos dentro deste bloco.
 
 
-            RoutedEventHandler dialogResultTrue = delegate (object sender, RoutedEventArgs e) // ele irá criar um método privado e vai atribuir a vai atribuir a variável dialogResultTrue
-            {
-                DialogResult = true; //definindo valor do click ok
-            };
+            //RoutedEventHandler dialogResultTrue = delegate (object sender, RoutedEventArgs e) // ele irá criar um método privado e vai atribuir a vai atribuir a variável dialogResultTrue
+            //{
+            //    DialogResult = true; //definindo valor do click ok
+            //};
 
-            RoutedEventHandler dialogResultfalse = delegate (object sender, RoutedEventArgs e)
-            {
-                DialogResult = false;//definindo valor do click cancelar
-            };
+            //RoutedEventHandler dialogResultfalse = delegate (object sender, RoutedEventArgs e)
+            //{
+            //    DialogResult = false;//definindo valor do click cancelar
+            //};
+
+            //Podemos simplificar o código acima utilizando expressões Lambda
+
+            RoutedEventHandler dialogResultTrue = (o,e) => DialogResult = true;
+            RoutedEventHandler dialogResultFalse = (o,e) => DialogResult = false;
+
 
 
 
@@ -76,7 +82,7 @@ namespace Eventos_Delegates_Lambda
 
 
             //manipulando com o combine. (utlizando com o operador de soma o compiladaor irá utilizar o método combine, então para reduzir o código opte por usar o operador de soma.
-            var cancelarEventHandler = (RoutedEventHandler)Delegate.Combine(dialogResultfalse, (RoutedEventHandler)Fechar); // o delegate combine pode somar diferentes métodos 
+            var cancelarEventHandler = (RoutedEventHandler)Delegate.Combine(dialogResultFalse, (RoutedEventHandler)Fechar); // o delegate combine pode somar diferentes métodos 
                                                                                                                             //podemos fazer a chamada do Fechar mesmo ele recebendo como parêmetro EventArgs e não um RoutedEventArgs, pois essa herda de EventArgs
 
             btnOk.Click += okEventHandler;
