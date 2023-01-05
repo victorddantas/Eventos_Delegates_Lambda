@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Eventos_Delegates_Lambda
 {
@@ -65,13 +66,11 @@ namespace Eventos_Delegates_Lambda
 
 
 
-
-
             //criando um delegate manipulando os métodos 
 
 
             //utilizando os delegates podemos tratar métodos com objetos (manipuláveis), porém temos que fazer um casting explicitando que se trata de um evento (RoutedEventHandler)
-            //A prtir do momento que eu faço o casting e defino o método como do tipo delegate o compilador passa a conceder acesso a classe abstrata Delegate. 
+            //A partir do momento que eu faço o casting e defino o método como do tipo delegate o compilador passa a conceder acesso a classe abstrata Delegate. 
             //dispensando o uso do termo DELEGATE, podendo utlizar o var.
 
 
@@ -89,18 +88,26 @@ namespace Eventos_Delegates_Lambda
             btnCancelar.Click += cancelarEventHandler; //ao invés de passar os métodos diretemante (ok e cancelar), somasse os dois passando os mesmos como delagates 
 
 
-            //validação dos campos (podemos dispensara a instanciação do delegate, pois colocabdo só o nome proprosto, o comnpilador já entende método.
-            //Utilizando o método DelegateValidacaoCampo que cria os delgates dinãmicamente
+            //validação dos campos (podemos dispensar a instanciação do delegate, pois colocando só o nome proprosto, o comnpilador já entende método.
+            //Utilizando o método DelegateValidacaoCampo que cria os delgates dinâmicamente
 
-            txtNome.TextChanged += DelegateValidacaoCampo(txtNome);
-            txtTelefone.TextChanged += DelegateValidacaoCampo(txtTelefone);
-            txtEndereco.TextChanged += DelegateValidacaoCampo(txtEndereco);
-            txtObs.TextChanged += DelegateValidacaoCampo(txtObs);
+            //txtNome.TextChanged += DelegateValidacaoCampo(txtNome);
+            //txtTelefone.TextChanged += DelegateValidacaoCampo(txtTelefone);
+            //txtEndereco.TextChanged += DelegateValidacaoCampo(txtEndereco);
+            //txtObs.TextChanged += DelegateValidacaoCampo(txtObs);
+
+            //Nesse caso se apenas tratarmos o sender, é necessário passae apenas o método ValidarCampoNulo
+
+
+            txtNome.TextChanged += ValidarCampoNulo;
+            txtTelefone.TextChanged += ValidarCampoNulo;
+            txtEndereco.TextChanged += ValidarCampoNulo;
+            txtObs.TextChanged += ValidarCampoNulo;
 
 
         }
 
-    
+
 
 
         //Métodos que são utlizados no delegates.
@@ -144,31 +151,44 @@ namespace Eventos_Delegates_Lambda
         //Método para construir delegates dinâmicamente para evitar a repetição de código para validação do campo, pois teria que criar um método para cada campo igaul o acima
 
 
-        private TextChangedEventHandler DelegateValidacaoCampo (TextBox txt) //recebe como parâmetro um textbox 
+        //private TextChangedEventHandler DelegateValidacaoCampo (TextBox txt) //recebe como parâmetro um textbox 
+        //{
+        //    return (o, e) => // o "o"  representa o sender que por sua vez representa o objeto que disparará o evento 
+        //    {
+        //        var textoVazio = string.IsNullOrEmpty(txt.Text);
+
+        //        //if (textoVazio)
+        //        //{
+        //        //    txt.Background = new SolidColorBrush(Colors.Red);
+        //        //}
+        //        //else
+        //        //{
+        //        //    txt.Background = new SolidColorBrush(Colors.White);
+
+        //        //}
+
+
+        //        //Podemos susbtituir pelo if ternário 
+
+        //        //se o retorno de textoVazio for true, prrencha o campo de vermelho, senão preencha de branco
+        //        txt.Background = textoVazio ? txt.Background = new SolidColorBrush(Colors.Red) : txt.Background = new SolidColorBrush(Colors.White); 
+
+
+        //    };
+        //}
+
+
+        //ao invés de se contruir umn método de contrução de delgates, podemos apenas tratar o sender ("o"),  que por sua vez representa o objeto que disparará o evento 
+
+        private void ValidarCampoNulo(object sender, EventArgs e)
         {
-            return (o, e) =>
-            {
-                var textoVazio = string.IsNullOrEmpty(txt.Text);
+            var txt = sender as TextBox; // definindo que o objeto que o sender irá receber é um textBox
+            var textoVazio = string.IsNullOrEmpty(txt.Text);
 
-                //if (textoVazio)
-                //{
-                //    txt.Background = new SolidColorBrush(Colors.Red);
-                //}
-                //else
-                //{
-                //    txt.Background = new SolidColorBrush(Colors.White);
-
-                //}
-
-
-                //Podemos susbtituir pelo if ternário 
-
-                //se o retorno de textoVazio for true, prrencha o campo de vermelho, senão preencha de branco
-                txt.Background = textoVazio ? txt.Background = new SolidColorBrush(Colors.Red) : txt.Background = new SolidColorBrush(Colors.White); 
-
-                
-            };
+           // se o retorno de textoVazio for true, prrencha o campo de vermelho, senão preencha de branco
+            txt.Background = textoVazio ? txt.Background = new SolidColorBrush(Colors.Red) : txt.Background = new SolidColorBrush(Colors.White);
         }
+
 
     }
 }
