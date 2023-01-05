@@ -189,6 +189,7 @@ namespace Eventos_Delegates_Lambda
             txt.Background = textoVazio ? txt.Background = new SolidColorBrush(Colors.Red) : txt.Background = new SolidColorBrush(Colors.White);
         }
 
+        //Um código dentro de uma expressão lambda só será excutado quando o delegate for invocado, ou sejá, no disparo do evento.
 
     }
 }
