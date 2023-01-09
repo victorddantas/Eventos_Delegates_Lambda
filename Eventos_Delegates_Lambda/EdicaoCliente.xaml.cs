@@ -97,16 +97,15 @@ namespace Eventos_Delegates_Lambda
             //txtObs.TextChanged += DelegateValidacaoCampo(txtObs);
 
             //Nesse caso se apenas tratarmos o sender, é necessário passae apenas o método ValidarCampoNulo
-
+            txtTelefone.TextChanged += ValidarCampoNulo;
+            txtTelefone.TextChanged += ValidarSomenteNumero;
 
             txtNome.TextChanged += ValidarCampoNulo;
-            txtTelefone.TextChanged += ValidarCampoNulo;
             txtEndereco.TextChanged += ValidarCampoNulo;
             txtObs.TextChanged += ValidarCampoNulo;
 
 
         }
-
 
 
 
@@ -190,6 +189,41 @@ namespace Eventos_Delegates_Lambda
         }
 
         //Um código dentro de uma expressão lambda só será excutado quando o delegate for invocado, ou sejá, no disparo do evento.
+
+
+
+        //Método para validar campo numérico 
+        private void ValidarSomenteNumero(object sender, EventArgs e)
+        {
+
+             var txt = sender as TextBox; // definindo que o objeto que o sender irá receber é um textBox
+
+
+
+            //Criando funções
+            //este delegate será utlizado para verificar o caractere digitado. O func é argumento do método de extensão ALL (esse é uma método genérico) do LINQ C#
+            //Esse é um delegate Genérico que retotna TResult, que é um argumento genérico desse delegate (TResult é do Tipo bool no método ALL)
+
+            /* Func<char, bool> verificaDigito = caractere => Char.IsDigit(caractere);*/ //caractere é o argumento que será verificado se é um digito ou não
+                                                                                         //o IsDigit é um método da classe Char que retorna verdadeiro se caso o caractere passado for um digito.
+
+
+
+            //podemos simplificar a func acima utilizando apenas o Isdigit (recebe um char e retorna um bool) 
+
+            //Func<char, bool> verificaDigito = Char.IsDigit;
+
+            /* var VerificaTextoEhDigito = txt.Text.All(verificaDigito);*/ //utiliznado um método de extensão do LINQ. 
+
+
+            //ou podemos simplemente utlizar o Isdigit como parêmetro do Método ALL 
+
+            var VerificaTextoEhDigito = txt.Text.All(Char.IsDigit);
+
+            // se o retorno de VerificaTextoEhDigito for true, prrencha o campo de branco, senão preencha de vermelho (algum caractere não é digito)
+            txt.Background = VerificaTextoEhDigito ? txt.Background = new SolidColorBrush(Colors.White) : txt.Background = new SolidColorBrush(Colors.Red);
+
+        }
 
     }
 }
