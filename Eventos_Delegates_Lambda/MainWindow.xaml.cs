@@ -53,7 +53,7 @@ namespace Eventos_Delegates_Lambda
             //a um método, possibilitando a implementação de qualquer método em tempo de execução.
 
             //selectionChangedEventHandler é um tipo de delegate - Para verificar como o método desse delegate deve ser criado, ctrl+f12 para verificar assinatura do delegate .
-
+            
 
             //Adicionando o evento ao listBox (mudança de seleção) (Um evento só pode aparecer a esquerda de um operador de += pois não se pode modificar o comportamento de um evento
             //somente adicionar e remover).

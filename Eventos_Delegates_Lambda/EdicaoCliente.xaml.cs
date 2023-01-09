@@ -186,11 +186,11 @@ namespace Eventos_Delegates_Lambda
 
         //ao invés de se contruir umn método de contrução de delgates, podemos apenas tratar o sender ("o"),  que por sua vez representa o objeto que disparará o evento 
 
-        private bool ValidarCampoNulo(string txt)
+        private void ValidarCampoNulo(object sender, ValidacaoEventArgs e)
         {
          
-            return !string.IsNullOrEmpty(txt);  //retonará se o campo édiferente de vazio ou nulo
-
+            var ehValido =  String.IsNullOrEmpty(e.Texto);  //retonará se o campo édiferente de vazio ou nulo
+            e.EhValido = ehValido;
         }
 
         //Um código dentro de uma expressão lambda só será excutado quando o delegate for invocado, ou sejá, no disparo do evento.
@@ -198,7 +198,7 @@ namespace Eventos_Delegates_Lambda
 
 
         //Método para validar campo numérico 
-        private bool ValidarSomenteNumero(string txt)
+        private void ValidarSomenteNumero(object sender, ValidacaoEventArgs e)
         {
            
             //Criando funções
@@ -219,8 +219,8 @@ namespace Eventos_Delegates_Lambda
 
             //ou podemos simplemente utlizar o Isdigit como parêmetro do Método ALL 
 
-            return txt.All(Char.IsDigit); //retonará se o campo é válido ou não
-          
+            var ehValido =  !e.Texto.All(Char.IsDigit); //retonará se o campo é válido ou não
+            e.EhValido = ehValido;
         }
 
     }
