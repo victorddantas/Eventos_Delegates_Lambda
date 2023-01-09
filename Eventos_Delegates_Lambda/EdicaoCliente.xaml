@@ -11,13 +11,13 @@
             <TextBlock FontWeight="Bold">ID:</TextBlock>
             <TextBlock Name="txtId"></TextBlock>
             <TextBlock FontWeight="Bold">Nome:</TextBlock>
-            <TextBox Name="txtNome"></TextBox>
+            <local:ValidacaoTextBox x:Name="txtNome"></local:ValidacaoTextBox> <!--com o local podemos utlizar o nosso próprio evento-->
             <TextBlock FontWeight="Bold">Telefone:</TextBlock>
-            <TextBox Name="txtTelefone"></TextBox>
+            <local:ValidacaoTextBox x:Name="txtTelefone"></local:ValidacaoTextBox>
             <TextBlock FontWeight="Bold">Endereço:</TextBlock>
-            <TextBox Name="txtEndereco"></TextBox>
+            <local:ValidacaoTextBox x:Name="txtEndereco"></local:ValidacaoTextBox>
             <TextBlock FontWeight="Bold">Observações:</TextBlock>
-            <TextBox Name="txtObs"></TextBox>
+            <local:ValidacaoTextBox x:Name="txtObs"></local:ValidacaoTextBox>
             <StackPanel Margin="0,5" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Content="OK" Margin="15,0" Padding="5" Name="btnOk"></Button>
                 <Button Content="Cancelar" Padding="5" Name="btnCancelar"></Button>

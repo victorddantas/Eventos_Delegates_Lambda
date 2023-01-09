@@ -50,3 +50,4 @@ C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda\obj\Debug
 C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda\obj\Debug\Eventos_Delegates_Lambda.csproj.CopyComplete
 C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda\obj\Debug\Eventos_Delegates_Lambda.exe
 C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda\obj\Debug\Eventos_Delegates_Lambda.pdb
+C:\ANFSUSAX\PROJETOS\PROJETO LAMBDA PRINCIPAL\Eventos_Delegates_Lambda\obj\Debug\GeneratedInternalTypeHelper.g.cs

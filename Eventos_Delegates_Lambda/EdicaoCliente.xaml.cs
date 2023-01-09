@@ -97,13 +97,20 @@ namespace Eventos_Delegates_Lambda
             //txtObs.TextChanged += DelegateValidacaoCampo(txtObs);
 
             //Nesse caso se apenas tratarmos o sender, é necessário passae apenas o método ValidarCampoNulo
-            txtTelefone.TextChanged += ValidarCampoNulo;
-            txtTelefone.TextChanged += ValidarSomenteNumero;
+            // txtTelefone.TextChanged += ValidarCampoNulo;
+            //txtTelefone.TextChanged += ValidarSomenteNumero;
 
-            txtNome.TextChanged += ValidarCampoNulo;
-            txtEndereco.TextChanged += ValidarCampoNulo;
-            txtObs.TextChanged += ValidarCampoNulo;
+            //txtNome.TextChanged += ValidarCampoNulo;
+            //txtEndereco.TextChanged += ValidarCampoNulo;
+            //txtObs.TextChanged += ValidarCampoNulo;
 
+            //Ao invès de utlizar o  TextChanged, utlizamos um evento criado por nós mesmo (Validacao), presente na classe ValidacaoTextBox
+            txtTelefone.Validacao += ValidarCampoNulo;
+            txtTelefone.Validacao += ValidarSomenteNumero;
+
+            txtNome.Validacao += ValidarCampoNulo;
+            txtEndereco.Validacao += ValidarCampoNulo;
+            txtObs.Validacao += ValidarCampoNulo;
 
         }
 
@@ -179,13 +186,11 @@ namespace Eventos_Delegates_Lambda
 
         //ao invés de se contruir umn método de contrução de delgates, podemos apenas tratar o sender ("o"),  que por sua vez representa o objeto que disparará o evento 
 
-        private void ValidarCampoNulo(object sender, EventArgs e)
+        private bool ValidarCampoNulo(string txt)
         {
-            var txt = sender as TextBox; // definindo que o objeto que o sender irá receber é um textBox
-            var textoVazio = string.IsNullOrEmpty(txt.Text);
+         
+            return !string.IsNullOrEmpty(txt);  //retonará se o campo édiferente de vazio ou nulo
 
-           // se o retorno de textoVazio for true, prrencha o campo de vermelho, senão preencha de branco
-            txt.Background = textoVazio ? txt.Background = new SolidColorBrush(Colors.Red) : txt.Background = new SolidColorBrush(Colors.White);
         }
 
         //Um código dentro de uma expressão lambda só será excutado quando o delegate for invocado, ou sejá, no disparo do evento.
@@ -193,13 +198,9 @@ namespace Eventos_Delegates_Lambda
 
 
         //Método para validar campo numérico 
-        private void ValidarSomenteNumero(object sender, EventArgs e)
+        private bool ValidarSomenteNumero(string txt)
         {
-
-             var txt = sender as TextBox; // definindo que o objeto que o sender irá receber é um textBox
-
-
-
+           
             //Criando funções
             //este delegate será utlizado para verificar o caractere digitado. O func é argumento do método de extensão ALL (esse é uma método genérico) do LINQ C#
             //Esse é um delegate Genérico que retotna TResult, que é um argumento genérico desse delegate (TResult é do Tipo bool no método ALL)
@@ -218,11 +219,8 @@ namespace Eventos_Delegates_Lambda
 
             //ou podemos simplemente utlizar o Isdigit como parêmetro do Método ALL 
 
-            var VerificaTextoEhDigito = txt.Text.All(Char.IsDigit);
-
-            // se o retorno de VerificaTextoEhDigito for true, prrencha o campo de branco, senão preencha de vermelho (algum caractere não é digito)
-            txt.Background = VerificaTextoEhDigito ? txt.Background = new SolidColorBrush(Colors.White) : txt.Background = new SolidColorBrush(Colors.Red);
-
+            return txt.All(Char.IsDigit); //retonará se o campo é válido ou não
+          
         }
 
     }
