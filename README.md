@@ -6,7 +6,7 @@ Criando um sistema básico de consulta de clientes, utilizando Entity Framework,
 
 Os delegates tem como função criar referência para métodos, possibilitando a chamada desse em tempo de execução, quando assim for necessário. 
 
-Os delegates esta relacionados aos eventos. O eventos são uma maneira da aplicação retornar uma notificação ao ususário de acordo com a sua interação com o sistema.
+Os delegates estão relacionados aos eventos. O eventos são uma maneira da aplicação retornar uma notificação ao ususário de acordo com a sua interação com o sistema.
 Os eventos utilizam os delagates para realizar a comunicação entre os nosso métodos e os retornos da aplicação para o usuários
 
 Quando um delegate é criado, automáticamente ele herda a classe Delegate do C# e assim  
